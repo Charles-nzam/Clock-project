@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div class="container">
+            <span id ="hours">00</span>
+            <span>:</span>
+            <span id="minutes">00</span>
+            <span>:</span>
+            <span id="seconds">00</span>
+            <span id="timing">AM</span>
+       </div>
+       <script>
+       function newTime() {
+        var newDate = new Date()
+        var hours = newDate.getHours();
+        var minutes = newDate.getMinutes();
+        var seconds = newDate.getSeconds();
+        document.getElementById('hours').innerHTML = hours;
+        document.getElementById('minutes').innerHTML = minutes;
+        document.getElementById('seconds').innerHTML = seconds;
+        var timing = document.getElementById('timing');
+        if (hours >= 12) {
+            timing.innerHTML = 'PM';
+        } else {
+            timing.innerHTML = 'AM';
+        }
+       }
+       setInterval(newTime, 10);
+       </script>
+    </body>
+</html>
